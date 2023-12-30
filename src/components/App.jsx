@@ -4,7 +4,7 @@ import ImageGallery from './ImageGallery/ImageGallery';
 import Button from './Button/Button';
 import { Container } from './App.styled';
 import { Notify } from 'notiflix';
-import { optionsNotify } from './Notify/Notify';
+import { optionsNotify } from './NotifyOptions/Notify';
 import { getAllImages, perPage } from 'api/api';
 import Loader from './Loader/Loader';
 import Modal from './Modal/Modal';

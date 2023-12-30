@@ -7,7 +7,7 @@ import {
 } from './Searchbar.styled';
 import { RiUserSearchLine } from 'react-icons/ri';
 import { Notify } from 'notiflix';
-import { optionsNotify } from 'components/Notify/Notify';
+import { optionsNotify } from 'components/NotifyOptions/Notify';
 
 class SearchBar extends Component {
   state = {
@@ -21,7 +21,6 @@ class SearchBar extends Component {
   handleSubmit = evt => {
     evt.preventDefault();
     const { textQuery } = this.state;
-    // console.log(textQuery);
     const { onSubmit } = this.props;
 
     if (textQuery === '') {
