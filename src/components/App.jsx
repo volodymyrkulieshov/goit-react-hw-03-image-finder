@@ -37,7 +37,7 @@ class App extends Component {
       //Запит на бек-енд з api
       const response = await getAllImages(this.state.search, this.state.page);
       const { totalHits, hits } = response;
-      const totalPage = Math.floor(totalHits / perPage);
+      const totalPage = Math.ceil(totalHits / perPage);
       if (totalHits === 0) {
         return Notify.failure(
           'Sorry, there are no images matching your search query. Please try again.',
@@ -59,7 +59,7 @@ class App extends Component {
           ? [...prevState.images, ...imageArray]
           : imageArray,
       }));
-      if (totalPage >= this.state.page) {
+      if (totalPage > this.state.page) {
         this.setState({ buttonLoadMore: true });
       } else {
         Notify.info(
