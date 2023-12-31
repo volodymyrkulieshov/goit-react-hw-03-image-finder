@@ -59,7 +59,7 @@ class App extends Component {
           ? [...prevState.images, ...imageArray]
           : imageArray,
       }));
-      if (totalPage > this.state.page) {
+      if (totalPage >= this.state.page) {
         this.setState({ buttonLoadMore: true });
       } else {
         Notify.info(
